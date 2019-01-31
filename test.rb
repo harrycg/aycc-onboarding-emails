@@ -6,11 +6,11 @@ client = NationBuilder::Client.new('harrycossar', ENV['NATIONBUILDER_APIKEY'], r
 
 puts "find recently created people"
 
-create_recently = {
-  tag: "XX %20a XX %20core%20q2%202018"
+create_recently_tag = {
+  tag: "harrytest"
   }
   
-create_recently_1 = client.call(:people_tags, :people, create_recently)
+create_recently_1 = client.call(:people_tags, :people, create_recently_tag)
 create_recently_2 = NationBuilder::Paginator.new(client, create_recently_1)
 
 create_recently_3 = []
@@ -44,4 +44,5 @@ puts "NOT adding membership #{id}"
     
 end
   
+end
 
