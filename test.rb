@@ -21,9 +21,27 @@ while create_recently_2.next?
 end  
 
 
-text_responded_3.each do |text_responded_3|
-  text_responded_tagged = text_responded_3['id']
-  tags=text_responded_3['tags']
+yesterday_1 =  DateTime.now - 1
+  
+create_recently_3.each do |create_recently_4|
+  if Date.parse(create_recently_4['created_at']) >= yesterday_1  
+  
+  email = person['email']
+  id = person['person_id']
+  puts "#{email} #{id} " 
+  
+   
+    params = {
+ id: "#{id}",
+ name: "onboarding_petition",
+  
+}
+    client.call(:memberships, :create , params)
+    
+  else  
 
+puts "NOT adding membership #{id}" 
+    
+end
   
 
