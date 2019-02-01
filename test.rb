@@ -22,13 +22,14 @@ end
 
 
 yesterday_1 =  DateTime.now - 1
+expires_7_day = DateTime.now + 7
   
 create_recently_3.each do |create_recently_4|
   if Date.parse(create_recently_4['created_at']) >= yesterday_1  
   
   email = create_recently_4['email']
   id = create_recently_4['id']
-  puts "#{email} id #{id} why " 
+  puts "#{email} id #{id} why expires_7_day" 
   
    
     params = {
@@ -36,6 +37,7 @@ create_recently_3.each do |create_recently_4|
  membership: {
       name: "test",
     status: "active",
+   expires_on: "expires_7_day"
    }
 }
     client.call(:memberships, :create , params)
