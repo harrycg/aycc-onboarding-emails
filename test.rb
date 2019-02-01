@@ -22,7 +22,7 @@ end
 
 
 yesterday_1 =  DateTime.now - 1
-expires_7_day = DateTime.now + 1
+expires_7_day = DateTime.now + 7
   
 create_recently_3.each do |create_recently_4|
   if Date.parse(create_recently_4['created_at']) >= yesterday_1  
