@@ -28,7 +28,7 @@ create_recently_3.each do |create_recently_4|
   
   email = create_recently_4['email']
   id = create_recently_4['person_id']
-  puts "#{email} #{id} " 
+  puts "#{email} id #{id} why " 
   
    
     params = {
