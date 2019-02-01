@@ -7,7 +7,7 @@ client = NationBuilder::Client.new('harrysandboxdev', ENV['NATIONBUILDER_APIKEY'
 puts "find recently created people"
 
 create_recently_tag = {
-  tag: "harrytest"
+  tag: "harrytest123"
   }
   
 create_recently_1 = client.call(:people_tags, :people, create_recently_tag)
