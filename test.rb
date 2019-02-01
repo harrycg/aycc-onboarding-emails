@@ -21,7 +21,7 @@ while create_recently_2.next?
 end  
 
 
-yesterday_1 =  DateTime.now - 1
+yesterday_1 =  DateTime.now - 0.01
 expires_7_day = DateTime.now + 7
   
 create_recently_3.each do |create_recently_4|
