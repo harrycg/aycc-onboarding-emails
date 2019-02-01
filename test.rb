@@ -29,7 +29,7 @@ create_recently_3.each do |create_recently_4|
   
   email = create_recently_4['email']
   id = create_recently_4['id']
-  puts "#{email} id #{id} why expires_7_day" 
+  puts "#{email} id #{id} why #{expires_7_day}" 
   
    
     params = {
@@ -37,7 +37,7 @@ create_recently_3.each do |create_recently_4|
  membership: {
       name: "test",
     status: "active",
-   expires_on: "expires_7_day"
+   expires_on: "#{expires_7_day}"
    }
 }
     client.call(:memberships, :create , params)
