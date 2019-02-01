@@ -33,7 +33,7 @@ create_recently_3.each do |create_recently_4|
    
     params = {
  person_id: "#{id}",
- name: "onboarding_petition",
+ name: "test",
   
 }
     client.call(:memberships, :create , params)
