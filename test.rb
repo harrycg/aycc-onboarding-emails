@@ -26,8 +26,7 @@ end
 #gets email and id from the list of people to then add membersip
 create_recently_3.each do |create_recently_4|
   
-  #will just add membership to people who's profile was created in the last day
-  if Date.parse(create_recently_4['created_at']) >= yesterday_1  
+ 
   
   email = create_recently_4['email']
   id = create_recently_4['id']
