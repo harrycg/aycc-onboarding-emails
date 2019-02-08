@@ -31,8 +31,13 @@ create_recently_3.each do |create_recently_4|
   email = create_recently_4['email']
   id = create_recently_4['id']
   tags = create_recently_4['tags']
-  puts "#{email} id #{id} why #{tags}" 
+  puts "#{email} id #{id} #{tags}" 
   
+petition='petition'
+
+petition_count=tags.count {petition}
+  
+  puts "#{email} id #{id} #{petition_count}" 
   
   end  
     
