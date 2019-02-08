@@ -30,7 +30,7 @@ create_recently_3.each do |create_recently_4|
   
   email = create_recently_4['email']
   id = create_recently_4['id']
-  tags = create_recently_4['tags']
+  tags = create_recently_4['tags'] 
   puts "#{email} id #{id} #{tags}" 
   
 petition_count=tags.count{ |element| element.match('petition') }
@@ -42,7 +42,7 @@ petition_count=tags.count{ |element| element.match('petition') }
     add_tag = {
  id: "#{id}",
   tagging: {
-    tag: "PETITIONS SIGNED: #{petition_count}"
+    tag: "PETITIONS SIGNED:  #{petition_count}"
   }
   
 }
