@@ -33,12 +33,21 @@ create_recently_3.each do |create_recently_4|
   tags = create_recently_4['tags']
   puts "#{email} id #{id} #{tags}" 
   
- 
-  
-
 petition_count=tags.count{ |element| element.match('petition') }
   
   puts "#{email} id #{id} #{petition_count}" 
+  
+  
+  
+    add_tag = {
+ id: "#{id}",
+  tagging: {
+    tag: "PETITIONS SIGNED: #{petition_count}"
+  }
+  
+}
+  
+    client.call(:people, :tag_person , add_tag)
   
   end  
     
