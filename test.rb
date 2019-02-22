@@ -2,7 +2,7 @@
 
 require 'nationbuilder'
 
-client = NationBuilder::Client.new('harrysandboxdev', ENV['NATIONBUILDER_APIKEY'], retries: 8)
+client = NationBuilder::Client.new('aycc', ENV['NATIONBUILDER_APIKEY'], retries: 8)
 
 puts "find recently created people"
 
@@ -13,7 +13,7 @@ date_25day=DateTime.now - 2.5
 
 #sets the tag you want to pull out
 create_recently_tag = {
-  tag: "harrytest123"
+  tag: "commsteam"
   }
   
 #pulls people from nationbuilder
@@ -38,10 +38,7 @@ expires_7_day = DateTime.now + 7
   
 #gets email and id from the list of people to then add membersip
 create_recently_3.each do |create_recently_4|
-  #will just add membership to people who's profile was created in the last day
-
-    if Date.parse(create_recently_4['created_at']).between?(three_days_ago, two_days_ago) 
-    
+ 
   email = create_recently_4['email']
   id = create_recently_4['id']
   puts "#{email} id #{id} why #{expires_7_day}" 
@@ -59,15 +56,21 @@ create_recently_3.each do |create_recently_4|
 }
     client.call(:memberships, :create , params)
     
-  else  
+
 #this is for people who weren't created in the last day
 puts "NOT adding membership #{id}" 
     
 end
-end
 
 =begin
-  
+  #will just add membership to people who's profile was created in the last day
+
+    if Date.parse(create_recently_4['created_at']).between?(three_days_ago, two_days_ago) 
+      else  
+end
+
+
+
   membership_params = {
  person_id: "#{id}"
     }
