@@ -32,14 +32,20 @@ expires_7_day = DateTime.now + 7
   
 #gets email and id from the list of people to then add membersip
 create_recently_3.each do |create_recently_4|
-  
  
-  
   email = create_recently_4['email']
   id = create_recently_4['id']
   puts "#{email} id #{id} why #{expires_7_day}" 
   
-   
+  membership_params = {
+ person_id: "#{id}"
+    }
+  
+  membership_1 = client.call(:membership, :index, membership_params)
+membership_2 = NationBuilder::Paginator.new(client, membership_1)
+  
+   puts "#{membership_2}"
+  
     #parameter for the new membership
     params = {
  person_id: "#{id}",
