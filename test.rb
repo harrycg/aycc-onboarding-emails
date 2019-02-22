@@ -35,7 +35,7 @@ expires_7_day = DateTime.now + 7
 #gets email and id from the list of people to then add membersip
 create_recently_3.each do |create_recently_4|
   #will just add membership to people who's profile was created in the last day
-  if three_days_ago >= Date.parse(create_recently_4['created_at']) >= two_days_ago  
+  if three_days_ago <= Date.parse(create_recently_4['created_at']) <= two_days_ago  
 
   email = create_recently_4['email']
   id = create_recently_4['id']
