@@ -10,12 +10,14 @@ date_25day=DateTime.now - 2.5
 
 person_to_create= {
   "person": {
-    "email": "bob@example.com",
+    "email": "bob1@example.com",
     "last_name": "Smith",
     "first_name": "Bob",
     "created_at": "#{date_25day}",
   }
 }
+
+client.call(:people, :create, person_to_create)
 
 
 #sets the tag you want to pull out
