@@ -6,6 +6,17 @@ client = NationBuilder::Client.new('harrysandboxdev', ENV['NATIONBUILDER_APIKEY'
 
 puts "find recently created people"
 
+date_25day=DateTime.now - 2.5
+
+person_to_create= {
+  "person": {
+    "email": "bob@example.com",
+    "last_name": "Smith",
+    "first_name": "Bob",
+    "created_at": "#{date_25day}",
+  }
+}
+
 
 #sets the tag you want to pull out
 create_recently_tag = {
