@@ -25,26 +25,23 @@ while create_recently_2.next?
 end  
 
 
-yesterday_1 =  DateTime.now - 1
+two_days_ago =  DateTime.now - 2
+three_days_ago =  DateTime.now - 3
+
 
 #use this date for setting membership expiration
 expires_7_day = DateTime.now + 7
   
 #gets email and id from the list of people to then add membersip
 create_recently_3.each do |create_recently_4|
- 
+  #will just add membership to people who's profile was created in the last day
+  if three_days_ago >= Date.parse(create_recently_4['created_at']) >= two_days_ago  
+
   email = create_recently_4['email']
   id = create_recently_4['id']
   puts "#{email} id #{id} why #{expires_7_day}" 
   
-  membership_params = {
- person_id: "#{id}"
-    }
-  
-  membership_1 = client.call(:membership, :index, membership_params)
-membership_2 = NationBuilder::Paginator.new(client, membership_1)
-  
-   puts "#{membership_2}"
+
   
     #parameter for the new membership
     params = {
@@ -62,12 +59,18 @@ membership_2 = NationBuilder::Paginator.new(client, membership_1)
 puts "NOT adding membership #{id}" 
     
 end
-
-=begin
-   #will just add membership to people who's profile was created in the last day
-  if Date.parse(create_recently_4['created_at']) >= yesterday_1  
 end
 
+=begin
+  
+  membership_params = {
+ person_id: "#{id}"
+    }
+  
+  membership_1 = client.call(:membership, :index, membership_params)
+membership_2 = NationBuilder::Paginator.new(client, membership_1)
+  
+   puts "#{membership_2}"
 =end
 
 =begin
