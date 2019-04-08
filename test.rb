@@ -13,7 +13,7 @@ date_25day=DateTime.now - 2.5
 
 #sets the tag you want to pull out
 create_recently_tag = {
-  tag: "commsteam"
+  tag: "onboarding: petition singers"
   }
   
 #pulls people from nationbuilder
@@ -41,7 +41,7 @@ create_recently_3.each do |create_recently_4|
  
   email = create_recently_4['email']
   id = create_recently_4['id']
-  puts "#{email} id #{id} why #{expires_7_day}" 
+  puts "#{email} #{id} membership expires #{expires_7_day}" 
   
 
   
