@@ -13,7 +13,7 @@ date_25day=DateTime.now - 2.5
 
 #sets the tag you want to pull out
 create_recently_tag = {
-  tag: "onboarding: petition singers"
+  tag: "onboarding:%20petition%20singers"
   }
   
 #pulls people from nationbuilder
