@@ -13,7 +13,7 @@ date_25day=DateTime.now - 2.5
 
 #sets the tag you want to pull out
 create_recently_tag = {
-  tag: "onboarding:%20petition%20singers"
+  tag: "onboard"
   }
   
 #pulls people from nationbuilder
@@ -34,14 +34,14 @@ three_days_ago =  DateTime.now - 3
 
 
 #use this date for setting membership expiration
-expires_7_day = DateTime.now + 7
+expires_5_day = DateTime.now + 5
   
 #gets email and id from the list of people to then add membersip
 create_recently_3.each do |create_recently_4|
  
   email = create_recently_4['email']
   id = create_recently_4['id']
-  puts "#{email} #{id} membership expires #{expires_7_day}" 
+  puts "#{email} #{id} membership expires #{expires_5_day}" 
   
 
   
@@ -57,9 +57,7 @@ create_recently_3.each do |create_recently_4|
     client.call(:memberships, :create , params)
     
 
-#this is for people who weren't created in the last day
-puts "NOT adding membership #{id}" 
-    
+
 end
 
 =begin
