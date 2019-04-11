@@ -51,7 +51,7 @@ create_recently_3.each do |create_recently_4|
  membership: {
       name: "test",
     status: "active",
-   expires_on: "#{expires_7_day}"
+   expires_on: "#{expires_5_day}"
    }
 }
     client.call(:memberships, :create , params)
